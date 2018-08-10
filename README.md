@@ -1,0 +1,1 @@
+# gitlab-pages-satis
