@@ -8,6 +8,9 @@
             "url": "https://github.com/ochorocho/satis-gitlab.git"
         }
     ],
+    "bin": [
+        "bin/gitlab-pages-satis"
+    ],
     "require": {
         "mbo/satis-gitlab": "dev-master"
     }
