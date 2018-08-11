@@ -1,0 +1,7 @@
+arguments:
+  url: "https://gitlab.example.org"
+  token: "GITLAB_TOKEN"
+options:
+  ignore: "(^namespace_name|^namespace\/project)"
+  homepage: "https://satis.example.org"
+  output: "satis.json"
