@@ -1,0 +1,14 @@
+{
+    "name": "ochorocho/satis-gitlab",
+    "type": "project",
+    "license": "GPLv3",
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/ochorocho/satis-gitlab.git"
+        }
+    ],
+    "require": {
+        "mbo/satis-gitlab": "dev-master"
+    }
+}
