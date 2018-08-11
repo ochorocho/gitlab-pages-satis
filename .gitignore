@@ -6,5 +6,5 @@ composer.phar
 # composer.lock
 /satis-gitlab/
 /config.yml
-/.idea
+/.idea/*
 /satis.json
