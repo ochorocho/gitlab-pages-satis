@@ -748,12 +748,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/ochorocho/satis-gitlab.git",
-                "reference": "c4440a9ea297af19f1f6f8acfb5af6c85ff66157"
+                "reference": "ac5481a24b7a5ecbd19c25f7623e4f11fa3547b8"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ochorocho/satis-gitlab/zipball/c4440a9ea297af19f1f6f8acfb5af6c85ff66157",
-                "reference": "c4440a9ea297af19f1f6f8acfb5af6c85ff66157",
+                "url": "https://api.github.com/repos/ochorocho/satis-gitlab/zipball/ac5481a24b7a5ecbd19c25f7623e4f11fa3547b8",
+                "reference": "ac5481a24b7a5ecbd19c25f7623e4f11fa3547b8",
                 "shasum": ""
             },
             "require": {
@@ -778,10 +778,9 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/mborne/satis-gitlab/tree/master",
-                "issues": "https://github.com/mborne/satis-gitlab/issues"
+                "source": "https://github.com/ochorocho/satis-gitlab/tree/master"
             },
-            "time": "2018-07-08T17:21:52+00:00"
+            "time": "2018-08-11T16:04:21+00:00"
         },
         {
             "name": "php-http/client-common",
