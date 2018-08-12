@@ -48,9 +48,9 @@ basic-auth:
 
 # TODO
 
-* Create `.htaccess` file and include in config
+* Create `.htaccess` file and include in config :check:
 * Add to packagist
-* Build Docker Image
+* Build Docker Image 
 * Run "on tag create"
 
 # Features
