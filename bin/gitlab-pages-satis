@@ -16,8 +16,8 @@ if ((!$loader = includeIfExists(__DIR__.'/../vendor/autoload.php')) && (!$loader
     exit(1);
 }
 
-/*
- * create extended satis application
+/**
+ * Create extended Satis application
  */
 $application = new Composer\Satis\Console\Application();
 $application->add(new \MBO\SatisGitlab\Command\GitlabToConfigCommand());
