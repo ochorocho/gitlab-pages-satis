@@ -8,3 +8,5 @@ composer.phar
 /config.yml
 /.idea/*
 /satis.json
+/web/
+/public/

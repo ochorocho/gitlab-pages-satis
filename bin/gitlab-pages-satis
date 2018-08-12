@@ -48,8 +48,7 @@ if(getenv('GITLAB_SATIS_CONFIG')) {
         echo $output->fetch();
         $yml = yaml_parse_file("./config.yml");
     } else {
-        $output->writeln("<error>Config file does not exist</error>");
-        echo $output->fetch();
+        throw new Exception("Config file does not exist!");
     }
 }
 
@@ -68,10 +67,23 @@ $input = new ArrayInput($command);
 $output->writeln("<info>Running command gitlab-to-config to create satis.json</info>");
 echo $output->fetch();
 
-$app = $application->run($input, $output);
+$application->run($input, $output);
+echo $output->fetch();
 
-if($app != 0) {
-    throw new Exception("Failed to create satis config");
-}
+/**
+ * Build Satis
+ */
+$output->writeln("<info>Generate static satis files</info>");
+echo $output->fetch();
+$input = new ArrayInput(array(
+            'command' => 'build',
+            'file' => $yml['options']['output'],
+            'output-dir' => $yml['build-dir']
+            )
+        );
 
+$application->run($input, $output);
+echo $output->fetch();
+
+$output->writeln("<info>Done creating satis files ... </info>");
 echo $output->fetch();
