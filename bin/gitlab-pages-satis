@@ -46,7 +46,7 @@ if(getenv('GITLAB_SATIS_CONFIG')) {
     if(file_exists($configFile)) {
         $output->writeln("<info>Read config from $configFile</info>");
         echo $output->fetch();
-        $yml = yaml_parse_file("./config.yml");
+        $yml = yaml_parse_file($configFile);
     } else {
         throw new Exception("Config file does not exist!");
     }
