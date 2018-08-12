@@ -8,10 +8,18 @@
             "url": "https://github.com/ochorocho/satis-gitlab.git"
         }
     ],
+    "autoload": {
+      "psr-4": {
+        "JoRo\\": "src/JoRo/"
+      }
+    },
     "bin": [
         "bin/gitlab-pages-satis"
     ],
     "require": {
-        "mbo/satis-gitlab": "dev-master"
+        "mbo/satis-gitlab": "dev-master",
+        "symfony/http-foundation": "^4.1",
+        "symfony/framework-bundle": "^4.1",
+        "symfony/http-kernel": "^4.1"
     }
 }

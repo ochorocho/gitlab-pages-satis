@@ -1,0 +1,77 @@
+#!/usr/bin/php
+<?php
+
+use Symfony\Component\Console\Output\BufferedOutput;
+use Symfony\Component\Console\Input\ArrayInput;
+
+function includeIfExists($file)
+{
+    if (file_exists($file)) {
+        return include $file;
+    }
+}
+
+if ((!$loader = includeIfExists(__DIR__.'/../vendor/autoload.php')) && (!$loader = includeIfExists(__DIR__.'/../../../autoload.php'))) {
+    print('You must set up the project dependencies using Composer before you can use Satis.');
+    exit(1);
+}
+
+/*
+ * create extended satis application
+ */
+$application = new Composer\Satis\Console\Application();
+$application->add(new \MBO\SatisGitlab\Command\GitlabToConfigCommand());
+
+$application->setAutoExit(false);
+
+// Base command
+$command = array('command' => 'gitlab-to-config');
+
+$output = new BufferedOutput();
+
+/**
+ * Read config - environment var takes precedence
+ */
+if(isset($argv[1])) {
+    $configFile = $argv[1];
+} else {
+    $configFile = "./config.yml";
+}
+
+if(getenv('GITLAB_SATIS_CONFIG')) {
+    $output->writeln("<info>Read config from environment GITLAB_SATIS_CONFIG</info>");
+    echo $output->fetch();
+    $yml = yaml_parse(getenv('GITLAB_SATIS_CONFIG'));
+} else {
+    if(file_exists($configFile)) {
+        $output->writeln("<info>Read config from yml file</info>");
+        echo $output->fetch();
+        $yml = yaml_parse_file("./config.yml");
+    } else {
+        $output->writeln("<error>Config file does not exist</error>");
+        echo $output->fetch();
+    }
+}
+
+/**
+ * Build command including arguments and options
+ */
+foreach($yml['options'] as $key => $argument) {
+    $command['--' . $key] = $argument;
+}
+foreach($yml['arguments'] as $key => $argument) {
+    $command[$key] = (string)$argument;
+}
+
+$input = new ArrayInput($command);
+
+$output->writeln("<info>Running command gitlab-to-config to create satis.json</info>");
+echo $output->fetch();
+
+$app = $application->run($input, $output);
+
+if($app != 0) {
+    throw new Exception("Failed to create satis config");
+}
+
+echo $output->fetch();
