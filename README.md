@@ -1,19 +1,5 @@
 # gitlab-pages-satis
 
-## Generate Gitlab Config
-
-```bash
-vendor/bin/satis-gitlab gitlab-to-config --homepage https://satis.knallimall.org --output satis.json https://gitlab.example.org TOKEN
-```
-
-## Build Satis
-
-```bash
-vendor/bin/satis-gitlab build satis.json web
-```
-
-## Build all
-
 ```bash
 bin/gitlab-pages-satis
 ```
