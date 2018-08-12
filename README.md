@@ -3,13 +3,13 @@
 ## Generate Gitlab Config
 
 ```bash
-bin/satis-gitlab gitlab-to-config --homepage https://satis.knallimall.org --output satis.json https://gitlab.example.org TOKEN
+vendor/bin/satis-gitlab gitlab-to-config --homepage https://satis.knallimall.org --output satis.json https://gitlab.example.org TOKEN
 ```
 
 ## Build Satis
 
 ```bash
-bin/satis-gitlab build satis.json web
+vendor/bin/satis-gitlab build satis.json web
 ```
 
 ## Build all
@@ -62,9 +62,14 @@ build-dir: './public'
 
 # Features
 
+
 * Config
   * Default: ./config.yml
   * env: GITLAB_SATIS_CONFIG
   * set config gitlab-pages-satis /path/to/config-file.yml
 * All values of `options`-section are passed as `--option-key` to the command, so all satis/satis-gilab options are available
 * All values of `arguments`-section are passed as `argument-key` to the command, so all satis/satis-gilab command arguments are available
+
+# Development
+
+* git clone 
