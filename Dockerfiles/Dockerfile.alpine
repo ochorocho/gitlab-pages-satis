@@ -10,8 +10,10 @@ RUN apk --update --no-cache --update-cache --allow-untrusted add \
 # Clean cache
     rm -rf /var/cache/apk/* && \
 # Install satis-gitlab
-    git clone https://github.com/ochorocho/gitlab-pages-satis.git /gitlab-pages-satis
-
+    git clone https://github.com/ochorocho/gitlab-pages-satis.git /gitlab-pages-satis && \
+    composer install && \
+# Configure php.ini
+    echo $'memory_limit = 1024M\nextension=yaml.so' >> /etc/php7/php.ini
 
 # VOLUME /config.yml
 # VOLUME /satis-build
