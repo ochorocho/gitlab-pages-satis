@@ -2,7 +2,7 @@ FROM alpine:3.7
 
 # Install PHP + mods
 RUN apk --update --no-cache --update-cache --allow-untrusted add \
-    gcc git curl php7 php7-bcmath php7-json php7-mbstring php7-openssl php7-iconv php7-phar php7-curl php7-gd php7-iconv php7-mysqli php7-pdo php7-sockets php7-xml php7-exif php7-zlib php7-dom php7-tokenizer php7-xmlwriter php7-pear yaml yaml-dev php7-dev g++ make autoconf yaml-dev && \
+    git curl php7 php7-json php7-mbstring php7-openssl php7-phar php7-pear yaml yaml-dev php7-dev g++ make autoconf yaml-dev && \
 # Install yaml
     yes '' | pecl install http://pecl.php.net/get/yaml && \
 # Install Composer
@@ -13,7 +13,10 @@ RUN apk --update --no-cache --update-cache --allow-untrusted add \
     git clone https://github.com/ochorocho/gitlab-pages-satis.git /gitlab-pages-satis && \
     cd /gitlab-pages-satis && composer install && \
 # Configure php.ini
-    echo $'memory_limit = 1024M\nextension=yaml.so' >> /etc/php7/php.ini
+    echo $'memory_limit = 1024M\nextension=yaml.so' >> /etc/php7/php.ini && \
+# Cleanup image
+    apk del make git
+
 
 # VOLUME /config.yml
 # VOLUME /satis-build
