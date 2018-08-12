@@ -72,4 +72,7 @@ build-dir: './public'
 
 # Development
 
-* git clone 
+* `git clone https://github.com/ochorocho/gitlab-pages-satis.git`
+* `composer install`
+* create config file, see config.example.yml
+* run it `./bin/gitlab-pages-satis`
