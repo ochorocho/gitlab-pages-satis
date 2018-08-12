@@ -10,3 +10,4 @@ composer.phar
 /satis.json
 /web/
 /public/
+/.DS_Store
