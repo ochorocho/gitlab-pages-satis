@@ -1,6 +1,6 @@
 arguments:
-  url: "https://gitlab.example.org"
-  token: "GITLAB_TOKEN"
+  gitlab-url: "https://gitlab.example.org"
+  gitlab-token: "GITLAB_TOKEN"
 options:
   ignore: "(^namespace_name|^namespace\/project)"
   homepage: "https://satis.example.org"
