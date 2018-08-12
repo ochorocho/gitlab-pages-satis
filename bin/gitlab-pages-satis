@@ -44,7 +44,7 @@ if(getenv('GITLAB_SATIS_CONFIG')) {
     $yml = yaml_parse(getenv('GITLAB_SATIS_CONFIG'));
 } else {
     if(file_exists($configFile)) {
-        $output->writeln("<info>Read config from yml file</info>");
+        $output->writeln("<info>Read config from $configFile</info>");
         echo $output->fetch();
         $yml = yaml_parse_file("./config.yml");
     } else {
@@ -87,3 +87,25 @@ echo $output->fetch();
 
 $output->writeln("<info>Done creating satis files ... </info>");
 echo $output->fetch();
+
+/**
+ * Create basic auth protection
+ */
+if(!empty($yml['basic-auth'])) {
+    $username = $yml['basic-auth']['username'];
+    $clearTextPassword = $yml['basic-auth']['password'];
+    $password = crypt($clearTextPassword, base64_encode($clearTextPassword));
+
+    $authName = $yml['basic-auth']['auth-name'];
+    $authFile = $yml['basic-auth']['auth-file'];
+
+    $htaccess = <<<HTACCESS
+Authtype Basic
+AuthName "$authName"
+AuthUserFile $authFile
+Require valid-user
+HTACCESS;
+
+    file_put_contents($yml['build-dir'] . '/.htaccess', "$htaccess");
+    file_put_contents($yml['build-dir'] . '/.htpasswd', "$username:$password");
+}

@@ -37,6 +37,13 @@ options:
   # Make sure string is escaped correctly
   ignore: '(^knallimall\/typo3-desktop)'
 build-dir: './public'
+# .htaccess and .htpasswd file only generated if set
+basic-auth:
+  auth-name: "Satis Repository"
+  auth-file: "/path/to/.htpasswd" # Absolute path required
+  username: "admin"
+  password: "password"
+
 ```
 
 # TODO
