@@ -3,5 +3,6 @@
     "homepage": "http://localhost/satis/",
     "require": [],
     "require-dependencies": true,
-    "require-dev-dependencies": true
+    "require-dev-dependencies": true,
+    "twig-template": "template/index.html.twig"
 }

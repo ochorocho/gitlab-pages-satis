@@ -47,8 +47,8 @@ basic-auth:
   password: "password"
 ```
 
-# TODO 
-* Use custom html template
+For satis-json configurations options see https://composer.github.io/satis/config.
+To use a custom template use `twig-template` option in your satis template. You'll find the example template in `vendor/composer/satis/views`
 
 # Features
 
