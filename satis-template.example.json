@@ -1,0 +1,7 @@
+{
+    "name": "SATIS repository",
+    "homepage": "http://localhost/satis/",
+    "require": [],
+    "require-dependencies": true,
+    "require-dev-dependencies": true
+}

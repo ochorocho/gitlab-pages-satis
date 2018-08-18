@@ -36,6 +36,8 @@ options:
   output: 'satis.json'
   # Make sure string is escaped correctly
   ignore: '(^knallimall\/typo3-desktop)'
+  template: 'satis-template.example.json'
+  use-file-to-include: '.satisinclude'
 build-dir: './public'
 # .htaccess and .htpasswd file only generated if set
 basic-auth:
@@ -43,15 +45,12 @@ basic-auth:
   auth-file: "/path/to/.htpasswd" # Absolute path required
   username: "admin"
   password: "password"
-
 ```
 
-# TODO
-* Add to packagist 
-* Run "on tag create"
+# TODO 
+* Use custom html template
 
 # Features
-
 
 * Config
   * Default: ./config.yml
