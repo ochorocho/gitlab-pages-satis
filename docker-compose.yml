@@ -1,0 +1,11 @@
+version: '2'
+services:
+    web:
+        container_name: gitlab-satis
+        image: ochorocho/gitlab-pages-satis:alpine
+        volumes:
+        - "./:/satis-build"
+        environment:
+            FLOW_CONTEXT: Development/Docker
+        ports:
+        - 8585:80

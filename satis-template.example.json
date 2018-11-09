@@ -4,5 +4,5 @@
     "require": [],
     "require-dependencies": true,
     "require-dev-dependencies": true,
-    "twig-template": "template/index.html.twig"
+    "twig-template": "vendor/composer/satis/views/index.html.twig"
 }

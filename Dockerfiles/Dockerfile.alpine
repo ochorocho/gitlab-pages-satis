@@ -17,3 +17,5 @@ RUN apk --update --no-cache --update-cache --allow-untrusted add \
     rm -rf /var/cache/apk/* && \
 # Link Binary
     ln -s /gitlab-pages-satis/bin/gitlab-pages-satis /usr/bin/gitlab-pages-satis
+
+WORKDIR /satis-build/

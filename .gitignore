@@ -12,3 +12,4 @@ composer.phar
 /public/
 /.DS_Store
 /template/
+/satis-template.json
