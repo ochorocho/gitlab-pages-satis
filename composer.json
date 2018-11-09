@@ -5,7 +5,7 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/ochorocho/satis-gitlab.git"
+            "url": "https://github.com/mborne/satis-gitlab.git"
         }
     ],
     "autoload": {
