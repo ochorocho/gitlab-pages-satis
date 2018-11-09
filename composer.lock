@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1f21e396440bd02e5b4120d41366bd79",
+    "content-hash": "fcac107fa0333e23eb98d1406a6215f4",
     "packages": [
         {
             "name": "composer/ca-bundle",
@@ -627,13 +627,13 @@
             "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/ochorocho/satis-gitlab.git",
-                "reference": "57f96b485b57a048cbba1406694d868213aa6345"
+                "url": "https://github.com/mborne/satis-gitlab.git",
+                "reference": "51fbee16631d6b6760cfd287451af5cdc47b2583"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/ochorocho/satis-gitlab/zipball/57f96b485b57a048cbba1406694d868213aa6345",
-                "reference": "57f96b485b57a048cbba1406694d868213aa6345",
+                "url": "https://api.github.com/repos/mborne/satis-gitlab/zipball/51fbee16631d6b6760cfd287451af5cdc47b2583",
+                "reference": "51fbee16631d6b6760cfd287451af5cdc47b2583",
                 "shasum": ""
             },
             "require": {
@@ -665,9 +665,10 @@
                 }
             ],
             "support": {
-                "source": "https://github.com/ochorocho/satis-gitlab/tree/master"
+                "source": "https://github.com/mborne/satis-gitlab/tree/master",
+                "issues": "https://github.com/mborne/satis-gitlab/issues"
             },
-            "time": "2018-11-09T12:32:22+00:00"
+            "time": "2018-10-24T11:25:36+00:00"
         },
         {
             "name": "psr/http-message",
