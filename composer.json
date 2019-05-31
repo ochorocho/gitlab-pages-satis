@@ -5,7 +5,11 @@
     "repositories": [
         {
             "type": "vcs",
-            "url": "https://github.com/mborne/satis-gitlab.git"
+            "url": "https://github.com/ochorocho/remote-git.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/ochorocho/satis-gitlab.git"
         }
     ],
     "autoload": {
@@ -17,6 +21,7 @@
         "bin/gitlab-pages-satis"
     ],
     "require": {
-        "mbo/satis-gitlab": "dev-master"
+        "mbo/satis-gitlab": "dev-master",
+        "mborne/remote-git": "dev-master"
     }
 }
